@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "factura")
@@ -25,6 +26,7 @@ public class Factura {
 	private Integer id;
 	@Column(name = "numero_de_factura",length = 30, nullable = false)
 	private String numFactura;
+	@Size(min=10,max=200,message="La descripcion de la factura debe tener entre 10 y 200 caracteres")
 	@Column(name = "descripcion",length = 200, nullable = false)
 	private String descrpicion;
 	@Column(name = "unidad",columnDefinition = "tinyint")

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import pe.com.pathOrder.model.Usuario;
 import pe.com.pathOrder.repository.AuthorityRepository;
+import pe.com.pathOrder.repository.CanalRepository;
 import pe.com.pathOrder.repository.UsuarioRepository;
 
 @Service
@@ -20,12 +21,17 @@ public class InitDBUser implements CommandLineRunner {
 	private AuthorityRepository authorityRepository;
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+	@Autowired
+	private CanalRepository canalRepository;
+	
 	
 	@Override
 	public void run(String... args) throws Exception {
 
 		this.usuarioRepository.deleteAll();
 		this.authorityRepository.deleteAll();
+		this.canalRepository .deleteAll();
+		
 		Usuario juan = new Usuario();		
 		juan.setUsername("Jose");
 		juan.setPassword(passwordEncoder.encode("juan"));
@@ -51,5 +57,6 @@ public class InitDBUser implements CommandLineRunner {
 		
 		List<Usuario> usuarios = Arrays.asList(juan, admin, manager);
 		this.usuarioRepository.saveAll(usuarios);
+		
 	}
 }

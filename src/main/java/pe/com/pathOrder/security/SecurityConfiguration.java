@@ -35,6 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/docentes/**").hasAuthority("ACCESS_REST1").antMatchers("/perfil/**").authenticated()
 				.antMatchers("/api/rest1").hasAuthority("ACCESS_REST1").antMatchers("/api/rest2")
 				.hasAuthority("ACCESS_REST2").antMatchers("/api/usuarios").hasRole("ADMIN").and().httpBasic();
+		http.cors().and().csrf().disable();
 	}
 
 	@Bean

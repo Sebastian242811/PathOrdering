@@ -10,12 +10,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 @Entity
 @Table(name="tipoDespacho")
 public class TipoDespacho {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@Size(min=10,max=50,message="El nombre de tipo de despacho debe tener entre 10 y 50 caracteres")
 	@Column(name = "nombre", length = 50, nullable = false)
 	private String nombre;
 	@OneToMany(mappedBy = "tipoDespacho")

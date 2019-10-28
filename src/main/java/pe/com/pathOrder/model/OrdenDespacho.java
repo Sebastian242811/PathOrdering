@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 @Entity
 @Table(name = "OrdenDespacho")
 public class OrdenDespacho {
@@ -27,6 +28,7 @@ public class OrdenDespacho {
 	private String AWB_BL;
 	@Column(name = "AWB_BL_Origen", length = 20, nullable = false)
 	private String AWB_BL_Origen;
+	@Size(min=5,max=20,message="La nombre de origen debe tener entre 5 y 20 caracteres")
 	@Column(name = "origen", length = 20, nullable = false)
 	private String origen;
 	@Column(name = "cantidad_de_series", nullable = false)

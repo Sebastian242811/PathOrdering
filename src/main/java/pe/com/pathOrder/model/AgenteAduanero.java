@@ -25,10 +25,10 @@ public class AgenteAduanero {
 	@Column(name = "nombre", length = 50,nullable = false)
 	private String nombre;
 	@NotBlank
-	@Size(min=10,max=50,message = "El nickname debe estar entre 10 y 50 caracteres")
+	@Size(min=5,max=50,message = "El nickname debe estar entre 10 y 50 caracteres")
 	@Column(name = "nickname", length = 50, nullable = true)
 	private String nickname;
-	@Size(min=10,max=50,message = "La contraseña debe estar entre 10 y 50 caracteres")
+	@Size(min=5,max=50,message = "La contraseña debe estar entre 10 y 50 caracteres")
 	@Column(name = "password",length = 50, nullable = false)
 	private String password;
 	@Column(name = "permiso")

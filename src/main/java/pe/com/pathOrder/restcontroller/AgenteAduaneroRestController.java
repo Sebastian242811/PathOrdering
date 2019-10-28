@@ -80,7 +80,7 @@ public class AgenteAduaneroRestController {
 				agenteAduaneroService.deleteById(id);
 				return new ResponseEntity<String>("Eliminado", HttpStatus.ACCEPTED);
 			}else {
-				return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<String>(HttpStatus.CONFLICT);
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);

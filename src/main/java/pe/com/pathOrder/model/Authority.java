@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Size;
 
 import pe.com.pathOrder.model.Usuario;
 
@@ -20,6 +21,7 @@ public class Authority {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	@Size(min=8,max=30,message="El nombre de la autoridad debe estar entre 8 y 30 caracteres")
 	@Column(length = 30, nullable = false)
 	private String authority;
 	

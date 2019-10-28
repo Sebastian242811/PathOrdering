@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "bulto")
@@ -15,6 +16,7 @@ public class Bulto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@NotNull
 	@Column(name ="peso", precision = 4 , nullable = false, columnDefinition = "float")
 	private float peso;
 	@ManyToOne
